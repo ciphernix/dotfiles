@@ -15,6 +15,7 @@ nmap \l :setlocal number!<CR>
 nmap \p :set paste!<CR>
 nmap \c :nohlsearch<CR>
 nmap \q :quit<CR>
+nmap \e :quita<CR>
 nmap \s :w<CR>
 
 "stand out 81st column
@@ -26,3 +27,10 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+"Switch windows
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-h> <C-W>h<C-W>_
+map <C-l> <C-W>l<C-W>_
+
