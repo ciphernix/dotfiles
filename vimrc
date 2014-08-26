@@ -34,3 +34,5 @@ map <C-K> <C-W>k<C-W>_
 map <C-h> <C-W>h<C-W>_
 map <C-l> <C-W>l<C-W>_
 
+"Listing buffers
+nnoremap <F5> :buffers<CR>:buffer<Space>
