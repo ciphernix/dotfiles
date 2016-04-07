@@ -36,3 +36,5 @@ map <C-l> <C-W>l<C-W>_
 
 "Listing buffers
 nnoremap <F5> :buffers<CR>:buffer<Space>
+set splitbelow
+set splitright
