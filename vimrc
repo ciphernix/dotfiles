@@ -271,7 +271,8 @@ nmap \c :nohlsearch<CR>
 nmap \q :quit<CR>
 nmap \e :qa<CR>
 nmap \s :w<CR>
-
+nmap \W :match ExtraWhitespace /\s\+$/<CR>
+nmap \L :match ErrorMsg '\%>80v.\+'<CR>
 
 "taglist
 let Tlist_Ctags_Cmd = "ctags"
@@ -293,8 +294,8 @@ set splitright
 
 set guioptions+=m
 " set guifont=Consolas:h12:cANSI
-
+set guifont=Menlo\ Regular:h14
 set nospell
 set synmaxcol=120
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=blue guibg=red
 match ExtraWhitespace /\s\+$/

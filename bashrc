@@ -16,3 +16,8 @@ fi
 
 export PATH=$PATH:~/bin
 stty -ixon
+export VISUAL='mvim -f'
+export EDITOR=$VISUAL
+stty -ixon
+export LANG=en_US.utf8
+export LC_ALL=en_US.utf8
