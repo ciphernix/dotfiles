@@ -1,5 +1,6 @@
 #!/bin/bash
-BASEDIR=$(dirname "$0")
+BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
+echo $BASEDIR
 SCRIPTNAME=$0
 
 function usage() {
@@ -12,7 +13,11 @@ function install_bash() {
 	if [ -f ~/.bashrc ]; then
 		cp ~/.bashrc ~/.bashrc.bkp
 	fi
+	if [ -f ~/.bash_profile ]; then
+		cp ~/.bash_profile ~/.bash_profile.bkp
+	fi
 	ln -sf ${BASEDIR}/bashrc ~/.bashrc
+	ln -sf ${BASEDIR}/bash_profile ~/.bash_profile
 	ln -sf ${BASEDIR}/git-prompt.sh ~/.git-prompt.sh
 	echo "Installed bash dot files"
 }
@@ -35,7 +40,7 @@ function install_vim() {
             cat ${BASEDIR}/ctags >> ~/.ctags
         fi
     else # No ctags file, just copy our go def
-        ln -sf ${BASEDIR}/ctag ~/.ctags
+        ln -sf ${BASEDIR}/ctags ~/.ctags
     fi
 
 	echo "Installed vim dot files."

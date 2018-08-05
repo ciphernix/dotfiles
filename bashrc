@@ -7,17 +7,17 @@ fi
 
 # User specific aliases and functions
 set -o vi
-alias vi=/usr/bin/vim
+#alias vi=/usr/bin/vim
 
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh
 	export PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 
-export PATH=$PATH:~/bin
 export GOPATH=~/go
+export PATH=$PATH:~/bin:$GOPATH/bin
 stty -ixon
-export VISUAL='mvim -f'
+export VISUAL='/usr/local/bin/vim'
 export EDITOR=$VISUAL
 stty -ixon
 export LANG=en_US.utf8
