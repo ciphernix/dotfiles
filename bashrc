@@ -15,6 +15,7 @@ if [ -f ~/.git-prompt.sh ]; then
 fi
 
 export PATH=$PATH:~/bin
+export GOPATH=~/go
 stty -ixon
 export VISUAL='mvim -f'
 export EDITOR=$VISUAL
