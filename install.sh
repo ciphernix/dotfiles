@@ -1,7 +1,7 @@
 #!/bin/bash 
-BASEDIR=$(dirname "$0")
+BASEDIR="$( cd "$(dirname "$0")" ; pwd -P )"
+echo $BASEDIR
 SCRIPTNAME=$0
-
 function usage() {
 	echo "Install dot files...."
 	echo "Usage: ${SCRIPTNAME} <bash> <vim> <all>"
@@ -28,6 +28,15 @@ function install_vim() {
 
 	ln -sf ${BASEDIR}/vimrc ~/.vimrc 
 	ln -sf ${BASEDIR}/vim ~/.vim 
+
+    if [ -f ~/.ctags ]; then
+        grep "langmap=Go:.go" ~/.ctags > /dev/null
+        if [  $? -ne 0 ]; then
+            cat ${BASEDIR}/ctags >> ~/.ctags
+        fi
+    else # No ctags file, just copy our go def
+        ln -sf ${BASEDIR}/ctags ~/.ctags
+    fi
 
 	echo "Installed vim dot files."
 }

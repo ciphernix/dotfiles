@@ -298,3 +298,4 @@ set nospell
 set synmaxcol=120
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+:inoremap <C-z> <C-x><C-o>

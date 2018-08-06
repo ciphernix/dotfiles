@@ -1,6 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/erdal/source/python/euler/.git'
-let g:netrw_dirhist_2='/home/erdal/.vim/autoload'
-let g:netrw_dirhist_3='/Users/erdal/repos/dotfiles/vim'
-let g:netrw_dirhist_4='/Users/erdal/repos/dotfiles'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/erdal'
+let g:netrw_dirhist_2='/Users/erdal/repos'
+let g:netrw_dirhist_3='/Users/erdal/repos/dotfile_mac'

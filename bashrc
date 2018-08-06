@@ -7,7 +7,12 @@ fi
 
 # User specific aliases and functions
 set -o vi
-alias vi=/usr/bin/vim
+if [ -x ~/.local/vim/bin/vim ]; then
+    vim_path=~/.local/vim/bin
+    alias vi=~/.local/vim/bin/vim
+else
+    alias vi=/usr/bin/vim
+fi
 
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh
@@ -15,4 +20,7 @@ if [ -f ~/.git-prompt.sh ]; then
 fi
 
 export PATH=$PATH:~/bin
+export GOPATH=~/go
+export GOROOT=/usr/local/go
+export PATH=$vim_path:~/bin:${GOPATH}/bin/:${GOROOT}/bin:$PATH
 stty -ixon
