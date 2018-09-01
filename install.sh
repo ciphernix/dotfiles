@@ -41,7 +41,19 @@ function install_vim() {
 	echo "Installed vim dot files."
 }
 
-case "$1" in 
+function install_tmux() {
+    if [ -f ~/.tmux.conf ]; then
+        cp ~/.tmux.conf ~/.tmux.conf.bkp
+    fi
+    ln -sf ${BASEDIR}/tmux/_tmux.conf ~/.tmux.conf
+
+    if [ -f ~/.tmux-themepack ]; then
+        cp ~/.tmux-themepack ~/.tmux-themepack.bkp
+    fi
+    ln -sf ${BASEDIR}/tmux/_tmux-themepack ~/.tmux-themepack
+}
+
+case "$1" in
 	bash)
 	  install_bash
 	  ;;
@@ -50,11 +62,16 @@ case "$1" in
 	  install_vim
 	  ;;
 
+	tmux)
+	  install_tmux
+	  ;;
+
 	all)
 	 install_bash
 	 install_vim
+	 install_tmux
 	 ;;
-	
+
 	 *)
 	   usage
 	   exit 1
